@@ -5,6 +5,8 @@ set tabstop=4       " visual spaces per tabs
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set hidden          " hide modified buffers without saving
+nnoremap j gj       " move vertically by visual line
+nnoremap k gk       " move vertically by visual line
 "cool stuff: 
 "set cursorline     " shows line cursor is on by underlining it
 
