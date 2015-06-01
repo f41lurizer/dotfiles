@@ -7,6 +7,7 @@ set number          " show line numbers
 set hidden          " hide modified buffers without saving
 nnoremap j gj       " move vertically by visual line
 nnoremap k gk       " move vertically by visual line
+:setlocal autoread  " auto reload file if edited
 "cool stuff: 
 "set cursorline     " shows line cursor is on by underlining it
 
