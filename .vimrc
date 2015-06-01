@@ -9,6 +9,8 @@ nnoremap j gj       " move vertically by visual line
 nnoremap k gk       " move vertically by visual line
 :setlocal autoread  " auto reload file if edited
 set cindent         " auto indent with C standard
+set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
+
 "cool stuff: 
 "set cursorline     " shows line cursor is on by underlining it
 
