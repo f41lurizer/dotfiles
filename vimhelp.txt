@@ -3,6 +3,15 @@ gi -- go to position where insert mode was stopped last
 gf -- open file at that name
 gF -- recognize filename:line number format to quickly get to a position in a file
 gg=G -- autoindent the whole file. can use any position modifiers to correct indentation within some bounds (ex: 10G=20G)
++ -- go to first character of next line
+- -- go to first character of prev line
+CTRL+o -- go to last position (stack)
+tab -- go to next position (stack)
+D -- delete till end of line (also d$)
+C -- change till end of line (also c$)
+A -- append to end of line
+I -- append to before first nonwhitespace character in line
+~ -- toggle case
      
 colon commands:
 :make --run makefile in directory
