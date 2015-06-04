@@ -6,12 +6,12 @@ set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set hidden          " hide modified buffers without saving
 syntax on          "syntax highlighting
-setlocal autoread  " auto reload file if edited
+setl autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
 
 "cool stuff:
 "set cursorline     " shows line cursor is on by underlining it
-:set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P    " show ascii and hex codes for character under cursor
+set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P    " show ascii and hex codes for character under cursor
 
 "autoindent for various programming languages:
 filetype on
