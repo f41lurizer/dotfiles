@@ -12,7 +12,6 @@ C -- change till end of line (also c$)
 A -- append to end of line
 I -- append to before first nonwhitespace character in line
 ~ -- toggle case
-     
 colon commands:
 :make --run makefile in directory
 :cn -- find compiler error in file/line number
@@ -27,3 +26,7 @@ ctrl+x = decrement number under cursor
 
 ctrl+L = redraw screen (if terminal output gets in the middle of it)
 
+visual mode:
+
+u -- make lowercase
+U -- make uppercase
