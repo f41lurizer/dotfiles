@@ -5,13 +5,30 @@ set tabstop=4       " visual spaces per tabs
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set hidden          " hide modified buffers without saving
-:setlocal autoread  " auto reload file if edited
-set cindent         " auto indent with C standard
+syntax on          "syntax highlighting
+setl autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
-:set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P    " show ascii and hex codes for character under cursor
 
-"cool stuff: 
+"autoindent for various programming languages:
+filetype on
+autocmd Filetype c,cpp,h setl cindent  "c/c++
+autocmd Filetype java setl cindent     "java
+autocmd Filetype php setl cindent      "php
+autocmd Filetype html setl cindent     "html
+autocmd Filetype sh setl cindent shiftwidth=2 tabstop=2     "shell scripts
+autocmd Filetype py setl cindent shiftwidth=2 tabstop=2     "shell scripts
+autocmd FileType make setl noexpandtab   "leave tabs alone with makefiles
+
+
+"cool stuff:
 "set cursorline     " shows line cursor is on by underlining it
-"these two remaps messs with normal navigation...
+set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P    " show ascii and hex codes for character under cursor
+set viminfo='100,f1 ",%               " '100=save marks for last 100 files, f1=save global marks as well, %=save buffer list if no cl args
+"preserve last vim session in ~/.vim/prev file
+set sessionoptions=buffers,options          "only want to save options and buffers, not window size, etc
+autocmd VimLeave * mksession! ~/.vim/prev
+
+"not in use:
 "nnoremap j gj       " move vertically by visual line
 "nnoremap k gk       " move vertically by visual line
+"set cindent         " auto indent with C standard
