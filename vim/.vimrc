@@ -1,5 +1,6 @@
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
+set expandtab		" tabs to spaces
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set hidden          " hide modified buffers without saving
@@ -61,3 +62,4 @@ cnoremap zg <Enter>
 "pathogen initialization
 execute pathogen#infect()
 filetype plugin on
+let g:Dsurround = 'ks'

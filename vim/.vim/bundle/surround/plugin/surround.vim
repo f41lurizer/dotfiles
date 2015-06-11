@@ -571,7 +571,9 @@ inoremap <silent> <Plug>Isurround  <C-R>=<SID>insert()<CR>
 inoremap <silent> <Plug>ISurround  <C-R>=<SID>insert(1)<CR>
 
 if !exists("g:surround_no_mappings") || ! g:surround_no_mappings
-  nmap ds  <Plug>Dsurround
+  "commented out for RSI prevention
+  "nmap ds  <Plug>Dsurround
+  nmap ks  <Plug>Dsurround
   nmap cs  <Plug>Csurround
   nmap cS  <Plug>CSurround
   nmap ys  <Plug>Ysurround
