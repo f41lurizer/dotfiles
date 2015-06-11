@@ -1,5 +1,3 @@
-set laststatus=2    " show status line
-set expandtab       " make tabs spaces
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
 set showmatch       " highlight matching [{()}]
@@ -14,7 +12,7 @@ autocmd Filetype c,cpp,h setl cindent  "c/c++
 autocmd Filetype java setl cindent     "java
 autocmd Filetype php setl cindent      "php
 autocmd Filetype html setl cindent     "html
-autocmd Filetype sh setl cindent shiftwidth=2 tabstop=2     "shell scripts
+autocmd Filetype sh setl shiftwidth=2 tabstop=2     "shell scripts
 autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2     "scripting languages
 autocmd FileType make setl noexpandtab   "leave tabs alone with makefiles
 

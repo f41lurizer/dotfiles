@@ -1,0 +1,1 @@
+/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim
