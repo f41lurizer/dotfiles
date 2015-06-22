@@ -135,3 +135,5 @@ alias fs="hadoop fs"
 unalias hls &> /dev/null
 alias hls="fs -ls"
 
+#vim previous session alias
+alias vimp="vim -S ~/.vim/prev"
