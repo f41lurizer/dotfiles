@@ -70,39 +70,32 @@ noremap hh gg
 
 "renoremap escape and :
 noremap zf :
-
-nnoremap zz <Esc>
-vnoremap zz <Esc>gV
-onoremap zz <Esc>
 inoremap zz <Esc>`^
 
-"renoremap enter to zg
-nnoremap zg <Enter>
-vnoremap zg <Enter>
-onoremap zg <Enter>
-inoremap zg <Enter>
-cnoremap zg <Enter>
 "End RSI Prevention Bindings
 "Leader mappings
 let mapleader = " "
 nnoremap <Leader>w :w<Enter>
+nnoremap <Leader>s :wq<Enter>
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>h <C-w>h
-nnoremap <Leader>f :find
-nnoremap <Leader>e :edit
+nnoremap <Leader>f :find<Space>
+nnoremap <Leader>e :edit<Space>
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
 nnoremap <Leader>q :q<Enter>
 nnoremap <Leader>x :qa<Enter>
 nnoremap <Leader>xx :qa!<Enter>
 nnoremap <Leader>t :call Trim()<Enter>
 nnoremap <Leader>cm ^i//<Esc>
-nnoremap <Leader>g :b
+nnoremap <Leader>g :b<Enter>
 nnoremap <Leader>d :bp\|bd#<Enter>
-nnoremap <Leader>i :b#
-nnoremap <Leader><Leader> <Enter>
-cnoremap <Leader><Leader> <Enter>
+nnoremap <Leader>i :b#<Enter>
+cnoremap <Leader>r <Enter>
+nnoremap <Leader>n :set relativenumber!<Enter>
+nnoremap <Leader><Leader> <Space>
+cnoremap <Leader><Leader> <Space>
 
 "******************* End Keybindings******************
 

@@ -120,22 +120,13 @@ alias lcod="lftp a5944665@codengine.hostei.com"
 #alias composer="/usr/local/bin/composer.phar"
 export PATH="~/.composer/vendor/bin:$PATH"
 
-
-#hadoop stuff
-
-# Set Hadoop-related environment variables
-export HADOOP_HOME=/usr/local/hadoop
-
-# Set JAVA_HOME (we will also configure JAVA_HOME directly for Hadoop later on)
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
-# Some convenient aliases and functions for running Hadoop-related commands
-unalias fs &> /dev/null
-alias fs="hadoop fs"
-unalias hls &> /dev/null
-alias hls="fs -ls"
-
 #vim previous session alias
 alias vimp="vim -S ~/.vim/prev"
+
 #ssh into digitalocean server
 alias lessh="ssh f41lurizer@45.55.183.45"
+
+#git aliases
+alias gpm="git push origin master"
+alias gpd="git push origin master"
+
