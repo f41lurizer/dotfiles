@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/f41lurizer/workspace/statsSite/app/Console'
 let g:netrw_dirhist_2='/home/f41lurizer/workspace/statsSite/app/Http/Controllers/Auth'
+let g:netrw_dirhist_3='/home/f41lurizer/workspace/statsSite/app/Http/Controllers'
+let g:netrw_dirhist_4='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/vim-snippets/snippets'
+let g:netrw_dirhist_5='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/calendar-vim'
+let g:netrw_dirhist_6='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/vim-snippets'
+let g:netrw_dirhist_7='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/vim-snipmate-master'
+let g:netrw_dirhist_8='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/vim-arpeggio-0.0.6'
+let g:netrw_dirhist_9='/home/f41lurizer/workspace/nonActive/dotfiles/vim/.vim/bundle/vim-snippets'
