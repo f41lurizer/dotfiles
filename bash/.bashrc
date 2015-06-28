@@ -137,3 +137,5 @@ alias hls="fs -ls"
 
 #vim previous session alias
 alias vimp="vim -S ~/.vim/prev"
+#ssh into digitalocean server
+alias lessh="ssh f41lurizer@45.55.183.45"

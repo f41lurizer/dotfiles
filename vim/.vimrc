@@ -34,27 +34,28 @@ set statusline+=\ Line:\ %l/%L   "line number/numLines
 set statusline+=\ Column:\ %c    "column number
 set laststatus=2
 
-" '100=save marks for last 100 files, 
-" f1=save global marks as well, 
+" '100=save marks for last 100 files,
+" f1=save global marks as well,
 "%=save buffer list if no cl args
-set viminfo='100,f1 ",%               
+set viminfo='100,f1 ",%
 "preserve last vim session in ~/.vim/prev file
 "only want to save options and buffers, not window size, etc
-set sessionoptions=buffers,options          
+set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
 
-"enable recursive file finding with :find 
+"enable recursive file finding with :find
 set path+=**
-"use the autocommand so supertab doesn't get slow 
+"use the autocommand so supertab doesn't get slow
 autocmd InsertEnter * set path-=**
 autocmd InsertLeave * set path+=**
 
 
 "************************** Keybindings***************
+"RSI Keybindings
 "cmap f find
 cnoreabbrev f find
 cnoreabbrev e find
-"RSI Prevention: 
+"RSI Prevention:
 "motions
 noremap f j
 noremap s h
@@ -82,9 +83,30 @@ onoremap zg <Enter>
 inoremap zg <Enter>
 cnoremap zg <Enter>
 "End RSI Prevention Bindings
+"Leader mappings
+let mapleader = " "
+nnoremap <Leader>w :w<Enter>
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>f :find
+nnoremap <Leader>e :edit
+nnoremap <Leader>sv :source ~/.vimrc<Enter>
+nnoremap <Leader>q :q<Enter>
+nnoremap <Leader>x :qa<Enter>
+nnoremap <Leader>xx :qa!<Enter>
+nnoremap <Leader>t :call Trim()<Enter>
+nnoremap <Leader>cm ^i//<Esc>
+nnoremap <Leader>g :b
+nnoremap <Leader>d :bp\|bd#<Enter>
+nnoremap <Leader>i :b#
+nnoremap <Leader><Leader> <Enter>
+cnoremap <Leader><Leader> <Enter>
+
 "******************* End Keybindings******************
 
-"plugins 
+"plugins
 "pathogen initialization
 execute pathogen#infect()
 filetype plugin on
@@ -92,7 +114,7 @@ let g:Dsurround = 'ks'
 
 "functions
 function HighlightOver80()
-"underline text over 80 characters 
+"underlinetext over 80 characters
 highlight OverLength cterm=underline
 match OverLength /\%>80v.\+/
 endfunction
