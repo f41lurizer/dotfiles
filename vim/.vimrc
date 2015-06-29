@@ -75,24 +75,34 @@ inoremap zz <Esc>`^
 "End RSI Prevention Bindings
 "Leader mappings
 let mapleader = " "
+"write commands
 nnoremap <Leader>w :w<Enter>
 nnoremap <Leader>s :wq<Enter>
+"quitting commands
+nnoremap <Leader>q :q<Enter>
+nnoremap <Leader>x :qa<Enter>
+nnoremap <Leader>xx :qa!<Enter>
+"window commands
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>h <C-w>h
+nnoremap <Leader>v :vsp<Enter>
+"opening a file
 nnoremap <Leader>f :find<Space>
 nnoremap <Leader>e :edit<Space>
+"vimrc
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
-nnoremap <Leader>q :q<Enter>
-nnoremap <Leader>x :qa<Enter>
-nnoremap <Leader>xx :qa!<Enter>
-nnoremap <Leader>t :call Trim()<Enter>
-nnoremap <Leader>cm ^i//<Esc>
-nnoremap <Leader>g :b<Enter>
+nnoremap <Leader>ov :edit ~/.vimrc<Enter>
+"buffer commands
+nnoremap <Leader>g :b
 nnoremap <Leader>d :bp\|bd#<Enter>
 nnoremap <Leader>i :b#<Enter>
+"minimacros
+nnoremap <Leader>t :call Trim()<Enter>
+nnoremap <Leader>cm ^i//<Esc>
 cnoremap <Leader>r <Enter>
+"misc commands
 nnoremap <Leader>n :set relativenumber!<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
