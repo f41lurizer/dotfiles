@@ -89,13 +89,15 @@ nnoremap <Leader>k <C-w>k
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>v :vsp<Enter>
 "opening a file
-nnoremap <Leader>f :find<Space>
+"nnoremap <Leader>f :find<Space>
 nnoremap <Leader>e :edit<Space>
+nnoremap <Leader>f :CtrlPMixed<Enter>
 "vimrc
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
 nnoremap <Leader>ov :edit ~/.vimrc<Enter>
 "buffer commands
-nnoremap <Leader>g :b
+nnoremap <Leader>g :CtrlPBuffer<Enter>
+"nnoremap <Leader>g :b
 nnoremap <Leader>d :bp\|bd#<Enter>
 nnoremap <Leader>i :b#<Enter>
 "minimacros
@@ -103,6 +105,8 @@ nnoremap <Leader>t :call Trim()<Enter>
 nnoremap <Leader>cm ^i//<Esc>
 cnoremap <Leader>r <Enter>
 "misc commands
+nnoremap <Leader>m :make<Enter>
+nnoremap <Leader>n :call ToggleNumbers()<Enter>
 nnoremap <Leader>n :set relativenumber!<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
@@ -125,4 +129,13 @@ endfunction
 "trim all trailing white space (call with :call Trim())
 function Trim()
 :%s/\s\+$//e
+endfunction
+
+"toggle relative/line numbers
+function ToggleNumbers()
+  if(&number == 0)
+    set number
+  else
+    set relativenumber
+  endif
 endfunction
