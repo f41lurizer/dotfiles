@@ -100,14 +100,16 @@ nnoremap <Leader>g :CtrlPBuffer<Enter>
 "nnoremap <Leader>g :b
 nnoremap <Leader>d :bp\|bd#<Enter>
 nnoremap <Leader>i :b#<Enter>
+"tab commands
+nnoremap <Leader>t :tabn<Enter>
+nnoremap <Leader>ot :tabnew<Enter>
 "minimacros
-nnoremap <Leader>t :call Trim()<Enter>
+nnoremap <Leader>ct :call Trim()<Enter>
 nnoremap <Leader>cm ^i//<Esc>
 cnoremap <Leader>r <Enter>
 "misc commands
 nnoremap <Leader>m :make<Enter>
 nnoremap <Leader>n :call ToggleNumbers()<Enter>
-nnoremap <Leader>n :set relativenumber!<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 
