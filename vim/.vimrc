@@ -92,6 +92,7 @@ nnoremap <Leader>v :vsp<Enter>
 "nnoremap <Leader>f :find<Space>
 nnoremap <Leader>e :edit<Space>
 nnoremap <Leader>f :CtrlPMixed<Enter>
+nnoremap <Leader>on :enew<Enter>
 "vimrc
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
 nnoremap <Leader>ov :edit ~/.vimrc<Enter>
@@ -120,7 +121,9 @@ cnoremap <Leader><Leader> <Space>
 execute pathogen#infect()
 filetype plugin on
 let g:Dsurround = 'ks'
-
+"for verminal
+nnoremap <Leader>om :call NewBuffer()<Enter>
+ 
 "functions
 function HighlightOver80()
 "underlinetext over 80 characters
