@@ -16,9 +16,10 @@ autocmd Filetype php setl cindent "php
 autocmd Filetype html setl cindent "html
 autocmd Filetype sh setl shiftwidth=2 tabstop=2 "shell scripts
 autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
+autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
-autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp call HighlightOver80()
+autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp,vim call HighlightOver80()
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
 
