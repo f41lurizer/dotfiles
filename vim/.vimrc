@@ -140,8 +140,10 @@ endfunction
 "toggle relative/line numbers
 function ToggleNumbers()
   if(&number == 0)
+    set norelativenumber
     set number
   else
+    set nonumber
     set relativenumber
   endif
 endfunction
