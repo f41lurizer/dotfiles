@@ -6,3 +6,6 @@ vimrcPath="$cwd/../vim/.vimrc"
 rm -rf ~/.vim ~/.vimrc
 ln -s $vimPath ~/.vim
 ln -s $vimrcPath ~/.vimrc
+#create directories for vim (undo, swap, prev)
+mkdir ~/.vim/undo
+mkdir ~/.vim/swap

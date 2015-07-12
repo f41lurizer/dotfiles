@@ -19,7 +19,7 @@ autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
 autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
-autocmd FileType .blade.php set filetype=blade.php "laravel blade files 
+autocmd FileType .blade.php set filetype=blade.php "laravel blade files
 autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp,vim call HighlightOver80()
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
@@ -113,11 +113,28 @@ cnoremap <Leader>r <Enter>
 "misc commands
 nnoremap <Leader>m :make<Enter>
 nnoremap <Leader>n :call ToggleNumbers()<Enter>
+nnoremap <Leader>sh :sh<Enter>
+"undo to last write
+nnoremap <Leader>u :earlier 1f<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 
 "******************* End Keybindings******************
 
+"local file stuff
+"Load local config
+if filereadable(glob("~/.local.vimrc"))
+  source ~/.local.vimrc
+endif
+
+"create undodir
+set undofile
+set undodir=~/.vim/undo "create undo directory
+
+"set directory for swap files
+set directory=~/.vim/swap "create swap directory
+
+"set backupdir
 "plugins
 "pathogen initialization
 execute pathogen#infect()
@@ -125,7 +142,7 @@ filetype plugin on
 let g:Dsurround = 'ks'
 "for verminal
 nnoremap <Leader>om :call NewBuffer()<Enter>
- 
+
 "functions
 function HighlightOver80()
 "underlinetext over 80 characters
@@ -133,7 +150,7 @@ highlight OverLength cterm=underline
 match OverLength /\%>80v.\+/
 endfunction
 
-"trim all trailing white space (call with :call Trim())
+"trim all trailing white space
 function Trim()
 :%s/\s\+$//e
 endfunction
