@@ -131,6 +131,7 @@ alias gpm="git push origin master"
 alias gpd="git push origin dev"
 alias gs="git status"
 alias gc="git commit -m "
+alias ga="git add "
 
 #bash aliases
 alias x="exit"
