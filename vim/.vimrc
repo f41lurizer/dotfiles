@@ -1,5 +1,6 @@
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
+set softtabstop=4   " backspace over 4 spaces 
 set expandtab		" tabs to spaces
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
@@ -25,6 +26,8 @@ autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp,vim call HighlightOver8
 autocmd BufEnter * setl formatoptions-=ro
 
 "set cursorline     " shows line cursor is on by underlining it
+"remove tabline
+set showtabline=0
 "clear statusline
 set statusline=
 set statusline+=%n\     "buffer number
