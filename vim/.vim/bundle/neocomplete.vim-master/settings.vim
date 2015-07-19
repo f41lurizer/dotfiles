@@ -1,4 +1,6 @@
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+"setting to make dot repetition work
+"let g:neocomplete#enable_fuzzy_completion = 0
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
