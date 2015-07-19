@@ -119,6 +119,8 @@ alias lcod="lftp a5944665@codengine.hostei.com"
 #laravel stuff
 #alias composer="/usr/local/bin/composer.phar"
 export PATH="~/.composer/vendor/bin:$PATH"
+#alias poweroff to turn off homestead first
+alias poweroff="sudo su && homestead halt && poweroff"
 
 #vim previous session alias
 alias vimp="vim -S ~/.vim/prev"

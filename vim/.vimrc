@@ -13,14 +13,14 @@ set backspace=indent,eol,start       " allow backspacing over lines, start of in
 filetype on
 autocmd Filetype c,cpp,h setl cindent "c/c++
 autocmd Filetype java setl cindent "java
-autocmd Filetype php setl cindent "php
 autocmd Filetype html setl cindent "html
 autocmd Filetype sh setl shiftwidth=2 tabstop=2 "shell scripts
 autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
 autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
-autocmd FileType .blade.php set filetype=blade.php "laravel blade files
+autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
+autocmd Filetype php setl cindent "php
 autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp,vim call HighlightOver80()
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
@@ -111,7 +111,6 @@ nnoremap <Leader>t :tabn<Enter>
 nnoremap <Leader>ot :tabnew<Enter>
 "minimacros
 nnoremap <Leader>ct :call Trim()<Enter>
-nnoremap <Leader>cm ^i//<Esc>
 cnoremap <Leader>r <Enter>
 "misc commands
 nnoremap <Leader>m :make<Enter>
@@ -121,7 +120,9 @@ nnoremap <Leader>sh :sh<Enter>
 nnoremap <Leader>u :earlier 1f<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
-
+"commenting
+nnoremap <Leader>cm ^i//<Esc>
+autocmd Filetype blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}
 "******************* End Keybindings******************
 
 "local file stuff
@@ -141,10 +142,17 @@ set directory=~/.vim/swap "create swap directory
 "plugins
 "pathogen initialization
 execute pathogen#infect()
+Helptags
 filetype plugin on
 let g:Dsurround = 'ks'
 "for verminal
 nnoremap <Leader>om :call NewBuffer()<Enter>
+"for ultisnips
+let g:UltiSnipsExpandTrigger="qm"
+let g:UltiSnipsJumpForwardTrigger="qn"
+let g:UltiSnipsJumpBackwardTrigger="qb"
+"load neocomplete default settings
+source ~/.vim/bundle/neocomplete.vim-master/settings.vim
 
 "functions
 function HighlightOver80()
