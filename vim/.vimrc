@@ -73,9 +73,8 @@ noremap k d
 noremap l s
 noremap hh gg
 
-"renoremap escape and :
-noremap zf :
-inoremap zz <Esc>`^
+"better marks
+nnoremap ' `
 
 "End RSI Prevention Bindings
 "Leader mappings
