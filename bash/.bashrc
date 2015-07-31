@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+export PS1="\w \#-: "
 alias lcod="lftp a5944665@codengine.hostei.com"
 
 #laravel stuff
