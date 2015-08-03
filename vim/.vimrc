@@ -61,23 +61,23 @@ autocmd InsertLeave * set path+=**
 cnoreabbrev f find
 cnoreabbrev e find
 "RSI Prevention:
-"motions
-noremap f j
-noremap s h
-noremap d k
-noremap g l
-"set right hand keys to left
-noremap j f
-noremap h g
-noremap k d
-noremap l s
-noremap hh gg
-
-"renoremap escape and :
-noremap zf :
-inoremap zz <Esc>`^
-
-"End RSI Prevention Bindings
+""motions
+"noremap f j
+"noremap s h
+"noremap d k
+"noremap g l
+""set right hand keys to left
+"noremap j f
+"noremap h g
+"noremap k d
+"noremap l s
+"noremap hh gg
+"
+""renoremap escape and :
+"noremap zf :
+"inoremap zz <Esc>`^
+"
+""End RSI Prevention Bindings
 "Leader mappings
 let mapleader = " "
 "write commands
