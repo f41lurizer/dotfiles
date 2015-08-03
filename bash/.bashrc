@@ -112,13 +112,15 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
 export PS1="\w \#-: "
 alias lcod="lftp a5944665@codengine.hostei.com"
 
 #laravel stuff
 #alias composer="/usr/local/bin/composer.phar"
 export PATH="~/.composer/vendor/bin:$PATH"
+alias pat="php artisan tinker"
+alias pa="php artisan"
+
 #alias poweroff to turn off homestead first
 alias poweroff="sudo su && homestead halt && poweroff"
 
