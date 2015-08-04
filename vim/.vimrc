@@ -61,7 +61,6 @@ autocmd InsertLeave * set path+=**
 cnoreabbrev f find
 cnoreabbrev e find
 "RSI Prevention:
-<<<<<<< HEAD
 ""motions
 "noremap f j
 "noremap s h
@@ -170,6 +169,8 @@ let g:UltiSnipsJumpForwardTrigger="qn"
 let g:UltiSnipsJumpBackwardTrigger="qb"
 "load neocomplete default settings
 source ~/.vim/bundle/neocomplete.vim-master/settings.vim
+"don't preview completion suggestions
+set completeopt-=preview
 
 "functions
 function HighlightOver80()
