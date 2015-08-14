@@ -21,7 +21,7 @@ autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
 autocmd Filetype php setl cindent "php
-autocmd FileType c,cpp,h,java,php,html,sh,py,rb,make,jsp,vim call HighlightOver80()
+autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
 
@@ -176,7 +176,7 @@ set completeopt-=preview
 function HighlightOver80()
 "underlinetext over 80 characters
 highlight OverLength cterm=underline
-match OverLength /\%>80v.\+/
+match <buffer> OverLength /\%>80v.\+/
 endfunction
 
 "trim all trailing white space
