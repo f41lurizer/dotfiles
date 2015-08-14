@@ -9,6 +9,7 @@ syntax on          "syntax highlighting
 
 setl autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
+
 "autoindent for various programming languages:
 filetype on
 autocmd Filetype c,cpp,h setl cindent "c/c++
@@ -174,9 +175,10 @@ set completeopt-=preview
 
 "functions
 function HighlightOver80()
-"underlinetext over 80 characters
-highlight OverLength cterm=underline
-match <buffer> OverLength /\%>80v.\+/
+  "underlinetext over 80 characters
+  highlight OverLength cterm=underline
+  "for highlighting columns over 80
+  match OverLength /\%>80v.\+/
 endfunction
 
 "trim all trailing white space
