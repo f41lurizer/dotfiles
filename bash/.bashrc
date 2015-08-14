@@ -143,3 +143,4 @@ alias gr="git rm "
 
 #bash aliases
 alias x="exit"
+alias off="sudo poweroff"
