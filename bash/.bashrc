@@ -136,12 +136,13 @@ alias lessh="ssh f41lurizer@45.55.183.45"
 #git aliases
 alias gpm="git push origin master"
 alias gpd="git push origin dev"
-alias gs="git status"
-alias gc="git commit -m "
-alias ga="git add "
 alias gplm="git pull origin master"
 alias gpld="git pull origin dev"
+alias gcm="git commit -m "
+alias gc="git commit "
+alias gs="git status"
 alias gd="git diff "
+alias ga="git add "
 alias gr="git rm "
 
 #bash aliases
