@@ -112,6 +112,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 export PS1="\w \#-: "
 alias lcod="lftp a5944665@codengine.hostei.com"
 
@@ -126,6 +127,8 @@ alias poweroff="sudo su && homestead halt && poweroff"
 
 #vim previous session alias
 alias vimp="vim -S ~/.vim/prev"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 #ssh into digitalocean server
 alias lessh="ssh f41lurizer@45.55.183.45"
@@ -144,3 +147,12 @@ alias gr="git rm "
 #bash aliases
 alias x="exit"
 alias off="sudo poweroff"
+
+#gpg aliases
+alias glk="gpg --list-keys"
+
+#source any local files and overwrite any bashrc settings
+if [ -f ~/.bashrc.local ];
+then
+  source ~/.bashrc.local
+fi
