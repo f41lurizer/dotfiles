@@ -119,8 +119,12 @@ alias lcod="lftp a5944665@codengine.hostei.com"
 #laravel stuff
 #alias composer="/usr/local/bin/composer.phar"
 export PATH="~/.composer/vendor/bin:$PATH"
+#laravel aliases
 alias pat="php artisan tinker"
 alias pa="php artisan"
+alias hs="homestead ssh"
+alias hu="homestead up"
+alias hh="homestead halt"
 
 #alias poweroff to turn off homestead first
 alias poweroff="sudo su && homestead halt && poweroff"
