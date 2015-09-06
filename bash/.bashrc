@@ -156,6 +156,9 @@ alias off="sudo poweroff"
 #gpg aliases
 alias glk="gpg --list-keys"
 
+#misc aliases
+alias gbg="gsettings get org.gnome.desktop.background picture-uri"
+
 #source any local files and overwrite any bashrc settings
 if [ -f ~/.bashrc.local ];
 then
