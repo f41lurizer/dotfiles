@@ -22,7 +22,7 @@ autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
 autocmd FileType php setl cindent "php
-autocmd FileType
+autocmd FileType text setl tw=80
 autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
@@ -58,7 +58,6 @@ autocmd InsertLeave * set path+=**
 
 
 "************************** Keybindings***************
-"RSI Keybindings
 "cmap f find
 cnoreabbrev f find
 cnoreabbrev e find
