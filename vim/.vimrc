@@ -14,7 +14,7 @@ set backspace=indent,eol,start       " allow backspacing over lines, start of in
 filetype on
 autocmd Filetype c,cpp,h setl cindent "c/c++
 autocmd Filetype java setl cindent "java
-autocmd Filetype html setl cindent "html
+autocmd Filetype html setl smartindent shiftwidth=2 tabstop=2  softtabstop=2
 autocmd Filetype sh setl shiftwidth=2 tabstop=2 "shell scripts
 autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
 autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
@@ -23,6 +23,7 @@ autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
 autocmd Filetype php setl cindent "php
 autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
+autocmd Filetype text setl textwidth=80
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
 
@@ -48,13 +49,6 @@ set viminfo='100,f1 ",%
 "only want to save options and buffers, not window size, etc
 set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
-
-"enable recursive file finding with :find
-set path+=**
-"use the autocommand so supertab doesn't get slow
-autocmd InsertEnter * set path-=**
-autocmd InsertLeave * set path+=**
-
 
 "************************** Keybindings***************
 "RSI Keybindings
