@@ -114,7 +114,6 @@ if ! shopt -oq posix; then
 fi
 
 export PS1="\w \#-: "
-alias lcod="lftp a5944665@codengine.hostei.com"
 
 #laravel stuff
 #alias composer="/usr/local/bin/composer.phar"
