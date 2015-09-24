@@ -7,7 +7,7 @@ set number          " show line numbers
 set hidden          " hide modified buffers without saving
 syntax on          "syntax highlighting
 
-setl autoread  " auto reload file if edited
+set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
 
 "autoindent for various programming languages:
@@ -16,8 +16,10 @@ autocmd FileType c,cpp,h setl cindent "c/c++
 autocmd FileType java setl cindent "java
 autocmd FileType html setl cindent "html
 autocmd FileType sh setl shiftwidth=2 tabstop=2 "shell scripts
-autocmd FileType py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
-autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
+autocmd FileType python setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType ruby setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType perl setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2"vim languages
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
@@ -51,7 +53,7 @@ set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
 
 "enable recursive file finding with :find
-set path+=**
+"set path+=**
 "use the autocommand so supertab doesn't get slow
 autocmd InsertEnter * set path-=**
 autocmd InsertLeave * set path+=**
