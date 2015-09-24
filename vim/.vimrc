@@ -7,7 +7,7 @@ set number          " show line numbers
 set hidden          " hide modified buffers without saving
 syntax on          "syntax highlighting
 
-setl autoread  " auto reload file if edited
+set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
 
 "autoindent for various programming languages:
@@ -18,10 +18,19 @@ autocmd Filetype html setl smartindent shiftwidth=2 tabstop=2  softtabstop=2
 autocmd Filetype sh setl shiftwidth=2 tabstop=2 "shell scripts
 autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
 autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
+autocmd FileType c,cpp,h setl cindent "c/c++
+autocmd FileType java setl cindent "java
+autocmd FileType html setl cindent "html
+autocmd FileType sh setl shiftwidth=2 tabstop=2 "shell scripts
+autocmd FileType python setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType ruby setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType perl setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
+autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2"vim languages
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
-autocmd Filetype php setl cindent "php
+autocmd FileType php setl cindent "php
+autocmd FileType text setl tw=80
 autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
 autocmd Filetype text setl textwidth=80
 "disable autocomment
@@ -51,39 +60,9 @@ set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
 
 "************************** Keybindings***************
-"RSI Keybindings
 "cmap f find
 cnoreabbrev f find
 cnoreabbrev e find
-"RSI Prevention:
-""motions
-"noremap f j
-"noremap s h
-"noremap d k
-"noremap g l
-""set right hand keys to left
-"noremap j f
-"noremap h g
-"noremap k d
-"noremap l s
-"noremap hh gg
-"
-""renoremap escape and :
-"noremap zf :
-"inoremap zz <Esc>`^
-"
-"""End RSI Prevention Bindings
-""motions
-"noremap f j
-"noremap s h
-"noremap d k
-"noremap g l
-""set right hand keys to left
-"noremap j f
-"noremap h g
-"noremap k d
-"noremap l s
-"noremap hh gg
 
 "better marks
 nnoremap ' `
@@ -133,7 +112,7 @@ nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 "commenting
 nnoremap <Leader>cm ^i//<Esc>
-autocmd Filetype blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}
+autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}
 "******************* End Keybindings******************
 
 "local file stuff

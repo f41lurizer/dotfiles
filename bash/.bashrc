@@ -1,3 +1,6 @@
+#http://northernmost.org/blog/flush-bash_history-after-each-command/
+#write to bash history on each command
+export PROMPT_COMMAND='history -a' #
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -114,7 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 export PS1="\w \#-: "
-alias lcod="lftp a5944665@codengine.hostei.com"
 
 #laravel stuff
 #alias composer="/usr/local/bin/composer.phar"
@@ -156,10 +158,14 @@ alias off="sudo poweroff"
 #gpg aliases
 alias glk="gpg --list-keys"
 
+
 #misc aliases
-alias gbg="gsettings get org.gnome.desktop.background picture-uri"
+#no output spotify
+alias spotify="spotify &> /dev/null &"
 ##open file in gnome default handler
 alias o="gnome-open "
+#get background
+alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
 #source any local files and overwrite any bashrc settings
 if [ -f ~/.bashrc.local ];
