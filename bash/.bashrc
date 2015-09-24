@@ -158,6 +158,7 @@ alias glk="gpg --list-keys"
 
 #misc aliases
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
+alias o="gnome-open "
 
 #source any local files and overwrite any bashrc settings
 if [ -f ~/.bashrc.local ];
