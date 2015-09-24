@@ -1,3 +1,6 @@
+#http://northernmost.org/blog/flush-bash_history-after-each-command/
+#write to bash history on each command
+export PROMPT_COMMAND='history -a' #
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
