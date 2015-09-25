@@ -158,9 +158,14 @@ alias off="sudo poweroff"
 #gpg aliases
 alias glk="gpg --list-keys"
 
+
 #misc aliases
-alias gbg="gsettings get org.gnome.desktop.background picture-uri"
+#no output spotify
+alias spotify="spotify &> /dev/null &"
+##open file in gnome default handler
 alias o="gnome-open "
+#get background
+alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
 #source any local files and overwrite any bashrc settings
 if [ -f ~/.bashrc.local ];
