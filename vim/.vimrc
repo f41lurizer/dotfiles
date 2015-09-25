@@ -19,7 +19,8 @@ autocmd FileType sh setl shiftwidth=2 tabstop=2 "shell scripts
 autocmd FileType python setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
 autocmd FileType ruby setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
 autocmd FileType perl setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
-autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2"vim languages
+autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType jade setl cindent shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
 autocmd FileType jsp set filetype=html
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
