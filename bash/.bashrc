@@ -128,6 +128,9 @@ alias hs="homestead ssh"
 alias hu="homestead up"
 alias hh="homestead halt"
 
+#node aliases
+alias ns="npm start"
+
 #alias poweroff to turn off homestead first
 alias poweroff="sudo su && homestead halt && poweroff"
 
