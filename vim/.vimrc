@@ -68,7 +68,6 @@ cnoreabbrev e find
 "better marks
 nnoremap ' `
 
-"End RSI Prevention Bindings
 "Leader mappings
 let mapleader = " "
 "write commands
@@ -104,16 +103,22 @@ nnoremap <Leader>ot :tabnew<Enter>
 nnoremap <Leader>ct :call Trim()<Enter>
 cnoremap <Leader>r <Enter>
 "misc commands
+"compile a c programs quickly
 nnoremap <Leader>m :make<Enter>
+"toggle between number and relativenumber
 nnoremap <Leader>n :call ToggleNumbers()<Enter>
+"spawn a subshell
 nnoremap <Leader>sh :sh<Enter>
+"toggle paste mode
+nnoremap <Leader>p :set paste!<Enter> 
 "undo to last write
 nnoremap <Leader>u :earlier 1f<Enter>
+"to type a space quickly, type space space
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 "commenting
 nnoremap <Leader>cm ^i//<Esc>
-autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}
+autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}<Esc>
 "******************* End Keybindings******************
 
 "local file stuff
@@ -129,7 +134,6 @@ set undodir=~/.vim/undo "create undo directory
 "set directory for swap files
 set directory=~/.vim/swap "create swap directory
 
-"set backupdir
 "plugins
 "pathogen initialization
 execute pathogen#infect()
