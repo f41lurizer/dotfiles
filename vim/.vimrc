@@ -1,5 +1,5 @@
 " vim: foldmethod=marker: set foldmarker=\"\*\*\*\*\*,\"\end:
-"*************** sensible defaults ********************
+"***** sensible defaults ********************
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
 set softtabstop=4   " backspace over 4 spaces 
@@ -15,7 +15,7 @@ autocmd BufEnter * setl formatoptions-=ro
 set modeline
 "end defaults
 
-"*************** Filetype specific stuff **************
+"***** filetype specific stuff **************
 "autoindent for various programming languages:
 filetype on
 autocmd Filetype c,cpp,h setl cindent "c/c++
@@ -55,7 +55,7 @@ set statusline+=\ Column:\ %c    "column number
 set laststatus=2
 "end appearance
 
-"*************** session saving **************
+"***** session saving **************
 " '100=save marks for last 100 files,
 " f1=save global marks as well,
 "%=save buffer list if no cl args
@@ -66,7 +66,7 @@ set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
 "end session saving 
 
-"************************** Keybindings***************
+"***** Keybindings***************
 "cmap f find
 cnoreabbrev f find
 cnoreabbrev e find
@@ -139,7 +139,7 @@ nnoremap <Leader>cm ^i//<Esc>
 autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}<Esc>
 "end keybindings
 
-"************ local file stuff *****************
+"***** local file stuff *****************
 "Load local config
 if filereadable(glob("~/.local.vimrc"))
   source ~/.local.vimrc
@@ -154,7 +154,7 @@ set directory=~/.vim/swap "create swap directory
 
 "end local file stuff
 
-"*****************plugins ****************************88
+"***** plugins ****************************88
 "pathogen initialization
 execute pathogen#infect()
 Helptags
@@ -173,7 +173,7 @@ set completeopt-=preview
 
 "end plugins
 
-"*************************functions***************
+"***** functions***************
 function HighlightOver80()
   "underlinetext over 80 characters
   highlight OverLength cterm=underline
@@ -198,6 +198,6 @@ function ToggleNumbers()
 endfunction
 "end functions
 
-"********************* unused settings **************************
+"***** unused settings **************************
 "set cursorline     " shows line cursor is on by underlining it
 "end unused settings
