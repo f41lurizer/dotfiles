@@ -1,3 +1,5 @@
+" vim: foldmethod=marker: set foldmarker=\"\*\*\*\*\*,\"\end:
+"*************** sensible defaults ********************
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
 set softtabstop=4   " backspace over 4 spaces 
@@ -6,39 +8,40 @@ set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set hidden          " hide modified buffers without saving
 syntax on          "syntax highlighting
-
 set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
+"disable autocomment
+autocmd BufEnter * setl formatoptions-=ro
+set modeline
+"end defaults
 
+"*************** Filetype specific stuff **************
 "autoindent for various programming languages:
 filetype on
 autocmd Filetype c,cpp,h setl cindent "c/c++
 autocmd Filetype java setl cindent "java
-autocmd Filetype html setl smartindent shiftwidth=2 tabstop=2  softtabstop=2
-autocmd Filetype sh setl shiftwidth=2 tabstop=2 "shell scripts
-autocmd Filetype py, rb setl cindent shiftwidth=2 tabstop=2 "scripting languages
-autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 "vim languages
-autocmd FileType c,cpp,h setl cindent "c/c++
-autocmd FileType java setl cindent "java
-autocmd FileType html setl cindent "html
-autocmd FileType sh setl shiftwidth=2 tabstop=2 "shell scripts
-autocmd FileType python setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
-autocmd FileType ruby setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
-autocmd FileType perl setl cindent shiftwidth=2 tabstop=2 softtabstop=2 "scripting languages
-autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType jade setl cindent shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
-autocmd FileType jsp set filetype=html
-autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent "laravel blade files
-autocmd FileType php setl cindent "php
+
+autocmd Filetype sh setl shiftwidth=2 tabstop=2
+autocmd FileType python setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType ruby setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType perl setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType php setl cindent 
+
+
+autocmd Filetype html setl smartindent shiftwidth=2 tabstop=2  softtabstop=2
+autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent 
+autocmd FileType jade setl cindent shiftwidth=2 tabstop=2 softtabstop=2
+
 autocmd FileType text setl tw=80
 autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
-autocmd Filetype text setl textwidth=80
-"disable autocomment
-autocmd BufEnter * setl formatoptions-=ro
 
-"set cursorline     " shows line cursor is on by underlining it
-"remove tabline
+autocmd FileType jsp set filetype=html
+"end filetype specific stuff
+
+"***** appearance
+"remove tabline--when disabled can't visually tell tabs are open
 set showtabline=0
 "clear statusline
 set statusline=
@@ -50,7 +53,9 @@ set statusline+=Ascii:\ %b  "ascii code
 set statusline+=\ Line:\ %l/%L   "line number/numLines
 set statusline+=\ Column:\ %c    "column number
 set laststatus=2
+"end appearance
 
+"*************** session saving **************
 " '100=save marks for last 100 files,
 " f1=save global marks as well,
 "%=save buffer list if no cl args
@@ -59,6 +64,7 @@ set viminfo='100,f1 ",%
 "only want to save options and buffers, not window size, etc
 set sessionoptions=buffers,options
 autocmd VimLeave * mksession! ~/.vim/prev
+"end session saving 
 
 "************************** Keybindings***************
 "cmap f find
@@ -102,7 +108,9 @@ nnoremap <Leader>ot :tabnew<Enter>
 "minimacros
 nnoremap <Leader>ct :call Trim()<Enter>
 cnoremap <Leader>r <Enter>
+
 "misc commands
+
 "compile a c programs quickly
 nnoremap <Leader>m :make<Enter>
 "toggle between number and relativenumber
@@ -112,6 +120,7 @@ nnoremap <Leader>sh :sh<Enter>
 "toggle paste mode
 nnoremap <Leader>p :set paste!<Enter> 
 "undo to last write
+nnoremap <Leader>oh q:
 nnoremap <Leader>u :earlier 1f<Enter>
 "to type a space quickly, type space space
 nnoremap <Leader><Leader> <Space>
@@ -119,9 +128,9 @@ cnoremap <Leader><Leader> <Space>
 "commenting
 nnoremap <Leader>cm ^i//<Esc>
 autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}<Esc>
-"******************* End Keybindings******************
+"end keybindings
 
-"local file stuff
+"************ local file stuff *****************
 "Load local config
 if filereadable(glob("~/.local.vimrc"))
   source ~/.local.vimrc
@@ -134,7 +143,9 @@ set undodir=~/.vim/undo "create undo directory
 "set directory for swap files
 set directory=~/.vim/swap "create swap directory
 
-"plugins
+"end local file stuff
+
+"*****************plugins ****************************88
 "pathogen initialization
 execute pathogen#infect()
 Helptags
@@ -151,7 +162,9 @@ source ~/.vim/bundle/neocomplete.vim-master/settings.vim
 "don't preview completion suggestions
 set completeopt-=preview
 
-"functions
+"end plugins
+
+"*************************functions***************
 function HighlightOver80()
   "underlinetext over 80 characters
   highlight OverLength cterm=underline
@@ -174,3 +187,8 @@ function ToggleNumbers()
     set relativenumber
   endif
 endfunction
+"end functions
+
+"********************* unused settings **************************
+"set cursorline     " shows line cursor is on by underlining it
+"end unused settings
