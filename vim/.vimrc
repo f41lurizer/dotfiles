@@ -98,12 +98,6 @@ nnoremap <Leader>e :edit<Space>
 nnoremap <Leader>f :CtrlPMixed<Enter>
 nnoremap <Leader>on :enew<Enter>
 
-"folding bindings (z is annoying)
-nnoremap <Leader>ro zo
-nnoremap <Leader>ri zi
-nnoremap <Leader>rc zc
-
-
 "vimrc
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
 nnoremap <Leader>ov :edit ~/.vimrc<Enter>
