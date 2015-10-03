@@ -79,38 +79,47 @@ let mapleader = " "
 "write commands
 nnoremap <Leader>w :w<Enter>
 nnoremap <Leader>s :wq<Enter>
+
 "quitting commands
 nnoremap <Leader>q :q<Enter>
 nnoremap <Leader>x :qa<Enter>
 nnoremap <Leader>xx :qa!<Enter>
+
 "window commands
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>v :vsp<Enter>
+
 "opening a file
 "nnoremap <Leader>f :find<Space>
 nnoremap <Leader>e :edit<Space>
 nnoremap <Leader>f :CtrlPMixed<Enter>
 nnoremap <Leader>on :enew<Enter>
+
+"folding bindings (z is annoying)
+nnoremap <Leader>ro zo
+nnoremap <Leader>ri zi
+nnoremap <Leader>rc zc
+
+
 "vimrc
 nnoremap <Leader>sv :source ~/.vimrc<Enter>
 nnoremap <Leader>ov :edit ~/.vimrc<Enter>
+
 "buffer commands
 nnoremap <Leader>g :CtrlPBuffer<Enter>
-"nnoremap <Leader>g :b
+"nnoremap <Leader>g :b " enable if no ctrlp
+"delete a buffer
 nnoremap <Leader>d :bp\|bd#<Enter>
+"switch to previous buffer
 nnoremap <Leader>i :b#<Enter>
 "tab commands
 nnoremap <Leader>t :tabn<Enter>
 nnoremap <Leader>ot :tabnew<Enter>
-"minimacros
+"mini macros
 nnoremap <Leader>ct :call Trim()<Enter>
-cnoremap <Leader>r <Enter>
-
-"misc commands
-
 "compile a c programs quickly
 nnoremap <Leader>m :make<Enter>
 "toggle between number and relativenumber
