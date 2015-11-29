@@ -131,6 +131,10 @@ alias hh="homestead halt"
 #node aliases
 alias ns="npm start"
 
+#rails aliases
+alias rs="rails server"
+alias rg="rails generate "
+
 #alias poweroff to turn off homestead first
 alias poweroff="sudo su && homestead halt && poweroff"
 
