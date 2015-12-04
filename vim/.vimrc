@@ -67,6 +67,9 @@ autocmd VimLeave * mksession! ~/.vim/prev
 "end session saving 
 
 "***** Keybindings***************
+"virtual j and k
+nnoremap j gj
+nnoremap k gk
 "cmap f find
 cnoreabbrev f find
 cnoreabbrev e find
