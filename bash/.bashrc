@@ -163,6 +163,7 @@ alias gr="git rm "
 #bash aliases
 alias x="exit"
 alias off="sudo poweroff"
+alias susp="systemctl suspend"
 
 #gpg aliases
 alias glk="gpg --list-keys"
