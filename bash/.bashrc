@@ -167,6 +167,8 @@ alias glk="gpg --list-keys"
 
 
 #misc aliases
+#socks proxy on port 2000
+alias prox="ssh -f -N -D 2000 "
 #no output spotify
 alias spotify="spotify &> /dev/null &"
 ##open file in gnome default handler
