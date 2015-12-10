@@ -6,8 +6,11 @@ set softtabstop=4   " backspace over 4 spaces
 set expandtab		" tabs to spaces
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
+set title
+set titlestring=Vim
 set hidden          " hide modified buffers without saving
 syntax on          "syntax highlighting
+colorscheme default "use default color scheme
 set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
 "disable autocomment
