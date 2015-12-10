@@ -143,9 +143,6 @@ alias vimp="vim -S ~/.vim/prev"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-#ssh into digitalocean server
-alias lessh="ssh f41lurizer@45.55.183.45"
-
 #git aliases
 alias gpm="git push origin master"
 alias gpd="git push origin dev"
