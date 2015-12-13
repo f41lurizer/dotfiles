@@ -9,3 +9,7 @@ Host cs3
 Host cs13
   User jinde001
   HostName csdev13.d.umn.edu
+
+Host ukko
+  User jinde001
+  HostName ukko.d.umn.edu
