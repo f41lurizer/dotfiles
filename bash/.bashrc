@@ -177,8 +177,11 @@ alias o="gnome-open "
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
 #safe rm so i stop deleting all my files :(
-mkdir /tmp/trash
 alias r="mv -t /tmp/trash "
+if ! [ -d /tmp/trash ];
+then
+  mkdir /tmp/trash
+fi
 
 #source any local files and overwrite any bashrc settings
 if [ -f ~/.bashrc.local ];
