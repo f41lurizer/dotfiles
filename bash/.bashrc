@@ -135,9 +135,6 @@ alias ns="npm start"
 alias rs="rails server"
 alias rg="rails generate "
 
-#alias poweroff to turn off homestead first
-alias poweroff="sudo su && homestead halt && poweroff"
-
 #vim previous session alias
 alias vimp="vim -S ~/.vim/prev"
 export VISUAL=vim
@@ -159,7 +156,7 @@ alias gr="git rm "
 
 #bash aliases
 alias x="exit"
-alias off="sudo poweroff"
+alias off="sudo poweroff -f"
 alias susp="systemctl suspend"
 
 #gpg aliases
