@@ -113,7 +113,7 @@ nnoremap <Leader>ob :edit ~/.bashrc<Enter>
 nnoremap <Leader>sb :!source ~/.bashrc<Enter>
 
 "tmux conf keybinding
-nnoremap <Leader>ob :edit ~/.tmux.conf<Enter>
+nnoremap <Leader>ot :edit ~/.tmux.conf<Enter>
 
 "buffer commands
 nnoremap <Leader>g :CtrlPBuffer<Enter>
