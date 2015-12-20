@@ -125,7 +125,7 @@ export PATH="~/.composer/vendor/bin:$PATH"
 alias pat="php artisan tinker"
 alias pa="php artisan"
 alias hs="homestead ssh"
-alias hu="homestead up"
+alias hu="homestead up --provision"
 alias hh="homestead halt"
 
 #node aliases
