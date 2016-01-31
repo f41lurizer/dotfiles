@@ -138,8 +138,8 @@ nnoremap <Leader>p :set paste!<Enter>
 "undo to last write
 nnoremap <Leader>oh q:
 nnoremap <Leader>u :earlier 1f<Enter>
-nnoremap <Leader>2 :set shiftwidth=2 tabstop=2 softtabstop=2<Enter>
-nnoremap <Leader>4 :set shiftwidth=4 tabstop=4 softtabstop=4<Enter>
+nnoremap <Leader>2 :setl shiftwidth=2 tabstop=2 softtabstop=2<Enter>
+nnoremap <Leader>4 :setl shiftwidth=4 tabstop=4 softtabstop=4<Enter>
 "to type a space quickly, type space space
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
