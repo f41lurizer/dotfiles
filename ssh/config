@@ -13,3 +13,6 @@ Host cs13
 Host ukko
   User jinde001
   HostName ukko.d.umn.edu
+Host stat
+  User f41lurizer
+  HostName 104.236.216.23
