@@ -173,6 +173,12 @@ alias o="gnome-open "
 #get background
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
+#tmux stuff
+source ~/.bin/tmuxinator.bash
+alias mx="sed -i \"s/root:.*/root: $@/g\" ~/.tmuxinator/gen.yml && mux gen"
+#unbind readline args (the alt+numkeys annoying stuff)
+for i in "-" {0..9}; do bind -r "\e$i"; done
+
 #safe rm so i stop deleting all my files :(
 alias r="mv -t /tmp/trash "
 if ! [ -d /tmp/trash ];
