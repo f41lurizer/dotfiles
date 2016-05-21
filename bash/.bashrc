@@ -90,7 +90,8 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -lah'
+alias s='ls'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -173,7 +174,12 @@ alias o="gnome-open "
 #get background
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
-#safe rm so i stop deleting all my files :(
+#tmux stuff
+source ~/.bin/tmuxinator.bash
+alias mx="sed -i \"s/root:.*/root: $@/g\" ~/.tmuxinator/gen.yml && mux gen"
+#unbind readline args (the alt+numkeys annoying stuff)
+for i in "-" {0..9}; do bind -r "\e$i"; done
+
 alias r="mv -t /tmp/trash "
 if ! [ -d /tmp/trash ];
 then
