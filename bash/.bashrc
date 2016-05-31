@@ -90,7 +90,8 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -lah'
+alias s='ls'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -162,7 +163,14 @@ alias susp="systemctl suspend"
 #gpg aliases
 alias glk="gpg --list-keys"
 
+#tmux keybindings
+alias mux="tmuxinator"
+alias mx="mux gen"
 
+#apt-get aliases
+alias agi="sudo apt-get install"
+alias agr="sudo apt-get remove"
+alias agp="sudo apt-get purge"
 #misc aliases
 #socks proxy on port 2000
 alias prox="ssh -f -N -D 2000 "
@@ -173,7 +181,16 @@ alias o="gnome-open "
 #get background
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
+#tmux stuff
+source ~/.bin/tmuxinator.bash
+alias mx="sed -i \"s/root:.*/root: $@/g\" ~/.tmuxinator/gen.yml && mux gen"
+#unbind readline args (the alt+numkeys annoying stuff)
+for i in "-" {0..9}; do bind -r "\e$i"; done
+
 #safe rm so i stop deleting all my files :(
+#PATH="/usr/local/bin:${path}"
+#export PATH
+
 alias r="mv -t /tmp/trash "
 if ! [ -d /tmp/trash ];
 then
@@ -185,9 +202,3 @@ if [ -f ~/.bashrc.local ];
 then
   source ~/.bashrc.local
 fi
-
-PATH="/home/f41lurizer/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/f41lurizer/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/f41lurizer/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/f41lurizer/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/f41lurizer/perl5"; export PERL_MM_OPT;
