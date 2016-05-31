@@ -91,6 +91,8 @@ nnoremap <Leader>q :q<Enter>
 nnoremap <Leader>x :qa<Enter>
 nnoremap <Leader>xx :qa!<Enter>
 
+"escape remap 
+inoremap jk <Esc>
 "window commands
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>l <C-w>l

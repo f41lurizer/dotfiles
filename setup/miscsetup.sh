@@ -7,9 +7,17 @@ sshpath="$cwd/../ssh/config"
 rm ~/.tmux.conf
 ln -s $cwd/../tmux/.tmux.conf ~/.tmux.conf
 
+#set up tmuxinator
+#TODO: confirm with user interactively
+rm -rf ~/.tmuxinator
+mkdir ~/.tmuxinator
+ln -s $cwd/../tmux/.tmuxinator/gen.yml ~/.tmuxinator/gen.yml
+
 #set up gtk config (for gnome terminal)
 rm -rf ~/.config/gtk-3.0/gtk.css
 ln -s $gtkpath ~/.config/gtk-3.0/gtk.css
 #set up ssh config
+echo "This will overwrite the existing ssh info. Manually remove ~/.ssh to run"
 rm -rf ~/.ssh/config
+mkdir ~/.ssh
 ln -s $sshpath ~/.ssh/config
