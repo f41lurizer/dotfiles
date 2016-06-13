@@ -21,6 +21,7 @@ set modeline
 "***** filetype specific stuff **************
 "autoindent for various programming languages:
 filetype on
+filetype indent on
 autocmd Filetype c,cpp,h setl cindent "c/c++
 autocmd Filetype java setl cindent "java
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
