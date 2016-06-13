@@ -1,4 +1,21 @@
 " vim: foldmethod=marker: set foldmarker=\"\*\*\*\*\*,\"\end:
+"***** vundle initialization ********************
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'SirVer/ultisnips'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'benjifisher/matchit.zip'
+Plugin 'tomtom/tlib_vim'
+Plugin 'kasldfh/verminal'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+call vundle#end()            " required
+filetype plugin indent on    " required
+"end vundle initialization
+
 "***** sensible defaults ********************
 set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
@@ -166,12 +183,7 @@ set directory=~/.vim/swap "create swap directory
 
 "end local file stuff
 
-"***** plugins ****************************88
-"pathogen initialization
-execute pathogen#infect()
-Helptags
-filetype plugin on
-let g:Dsurround = 'ks'
+"***** plugins configuration****************************88
 "for verminal
 nnoremap <Leader>om :call NewBuffer()<Enter>
 "for ultisnips
@@ -179,11 +191,10 @@ let g:UltiSnipsExpandTrigger="qm"
 let g:UltiSnipsJumpForwardTrigger="qn"
 let g:UltiSnipsJumpBackwardTrigger="qb"
 "load neocomplete default settings
-source ~/.vim/bundle/neocomplete.vim-master/settings.vim
+source ~/.vim/neocomplete_settings.vim
 "don't preview completion suggestions
 set completeopt-=preview
-
-"end plugins
+"end plugins configuration
 
 "***** functions***************
 function HighlightOver80()
