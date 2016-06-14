@@ -36,6 +36,6 @@ windows:
   #- server: bundle exec rails s
   #- logs: tail -f log/development.log
   - bash:
-  - vim:
+  - vim: vim
   - bash:
   - todo: vim ~/stuff/todo.txt ~/stuff/notes.txt
