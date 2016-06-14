@@ -5,14 +5,18 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
 Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'benjifisher/matchit.zip'
-Plugin 'tomtom/tlib_vim'
 Plugin 'kasldfh/verminal'
-Plugin 'MarcWeber/vim-addon-mw-utils'
+
+Plugin 'pangloss/vim-javascript'
 call vundle#end()            " required
+"Run :PluginInstall to install plugins
 filetype plugin indent on    " required
 "end vundle initialization
 
@@ -37,8 +41,6 @@ set modeline
 
 "***** filetype specific stuff **************
 "autoindent for various programming languages:
-filetype on
-filetype indent on
 autocmd Filetype c,cpp,h setl cindent "c/c++
 autocmd Filetype java setl cindent "java
 autocmd FileType make setl noexpandtab "leave tabs alone with makefiles
@@ -51,7 +53,8 @@ autocmd FileType vim setl cindent shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType php setl cindent 
 
 
-autocmd Filetype html setl smartindent shiftwidth=2 tabstop=2  softtabstop=2
+autocmd Filetype html setl shiftwidth=2 tabstop=2  softtabstop=2
+autocmd Filetype javascript setl shiftwidth=2 tabstop=2  softtabstop=2
 autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent 
 autocmd FileType jade setl cindent shiftwidth=2 tabstop=2 softtabstop=2
 
