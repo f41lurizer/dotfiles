@@ -13,6 +13,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'benjifisher/matchit.zip'
 Plugin 'kasldfh/verminal'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'pangloss/vim-javascript'
 call vundle#end()            " required
@@ -197,6 +198,10 @@ let g:UltiSnipsJumpBackwardTrigger="qb"
 source ~/.vim/neocomplete_settings.vim
 "don't preview completion suggestions
 set completeopt-=preview
+"for indent-guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "end plugins configuration
 
 "***** functions***************

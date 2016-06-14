@@ -182,10 +182,15 @@ alias o="gnome-open "
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
 #tmux stuff
-source ~/.bin/tmuxinator.bash
+if [ -f ~/.bin/tmuxinator.bash ];
+then
+  source ~/.bin/tmuxinator.bash
+fi
 alias mx="sed -i \"s/root:.*/root: $@/g\" ~/.tmuxinator/gen.yml && mux gen"
 #unbind readline args (the alt+numkeys annoying stuff)
 for i in "-" {0..9}; do bind -r "\e$i"; done
+
+export TERM=xterm-256color
 
 #safe rm so i stop deleting all my files :(
 #PATH="/usr/local/bin:${path}"
