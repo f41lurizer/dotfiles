@@ -3,12 +3,16 @@ cwd=$(pwd)
 gtkpath="$cwd/../gtk/gtk.css"
 sshpath="$cwd/../ssh/config"
 
-#set up tmux
+#tmux
+#install it first
+sudo apt-get install -y tmux ruby
+
 rm ~/.tmux.conf
 ln -s $cwd/../tmux/.tmux.conf ~/.tmux.conf
 
 #set up tmuxinator
 #TODO: confirm with user interactively
+sudo gem install tmuxinator
 rm -rf ~/.tmuxinator
 mkdir ~/.tmuxinator
 ln -s $cwd/../tmux/.tmuxinator/gen.yml ~/.tmuxinator/gen.yml
