@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'benjifisher/matchit.zip'
 Plugin 'kasldfh/verminal'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tomtom/tcomment_vim'
 
 Plugin 'pangloss/vim-javascript'
 call vundle#end()            " required
@@ -168,8 +169,10 @@ nnoremap <Leader>4 :setl shiftwidth=4 tabstop=4 softtabstop=4<Enter>
 nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 "commenting
-nnoremap <Leader>cm ^i//<Esc>
-autocmd FileType blade nnoremap <buffer> <Leader>cm ^i{{--<Esc>$a--}}<Esc>
+"map to tcomment's default for commenting line
+nmap <Leader>c gcc
+"toggle indent (default is ig, messes with b# keybinding)
+nmap <silent> <Leader>oi <Plug>IndentGuidesToggle
 "end keybindings
 
 "***** local file stuff *****************
