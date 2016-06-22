@@ -15,6 +15,7 @@ Plugin 'benjifisher/matchit.zip'
 Plugin 'kasldfh/verminal'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'henrik/vim-indexed-search'
 
 Plugin 'pangloss/vim-javascript'
 call vundle#end()            " required
