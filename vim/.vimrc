@@ -14,7 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'benjifisher/matchit.zip'
 Plugin 'kasldfh/verminal'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary'
 Plugin 'henrik/vim-indexed-search'
 
 Plugin 'pangloss/vim-javascript'
@@ -171,7 +171,7 @@ nnoremap <Leader><Leader> <Space>
 cnoremap <Leader><Leader> <Space>
 "commenting
 "map to tcomment's default for commenting line
-nmap <Leader>c gcc
+nmap <Leader>cm gcc
 "toggle indent (default is ig, messes with b# keybinding)
 nmap <silent> <Leader>oi <Plug>IndentGuidesToggle
 "end keybindings
@@ -206,6 +206,7 @@ set completeopt-=preview
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+let g:ctrlp_clear_cache_on_exit = 1
 "end plugins configuration
 
 "***** functions***************
