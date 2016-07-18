@@ -40,6 +40,8 @@ set backspace=indent,eol,start       " allow backspacing over lines, start of in
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
 set modeline
+set ignorecase    "ignore case in search patterns
+set smartcase     "disables ignorecase if caps are in search pattern
 "end defaults
 
 "***** filetype specific stuff **************
@@ -123,6 +125,7 @@ nnoremap <Leader>l <C-w>l
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>v :vsp<Enter>
+nnoremap <Leader>sp :sp<Enter>
 
 "opening a file
 "nnoremap <Leader>f :find<Space>
@@ -153,6 +156,7 @@ nnoremap <Leader>t :tabn<Enter>
 nnoremap <Leader>ot :tabnew<Enter>
 "mini macros
 nnoremap <Leader>ct :call Trim()<Enter>
+nnoremap <Leader>cr :%s/\r\n/\r/g<Enter>
 "compile a c programs quickly
 nnoremap <Leader>m :make<Enter>
 "toggle between number and relativenumber
@@ -160,7 +164,7 @@ nnoremap <Leader>n :call ToggleNumbers()<Enter>
 "spawn a subshell
 nnoremap <Leader>sh :sh<Enter>
 "toggle paste mode
-nnoremap <Leader>p :set paste!<Enter> 
+nnoremap <Leader>p :setl paste!<Enter> 
 "undo to last write
 nnoremap <Leader>oh q:
 nnoremap <Leader>u :earlier 1f<Enter>
@@ -210,7 +214,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 "end plugins configuration
 
 "***** functions***************
-function HighlightOver80()
+function! HighlightOver80()
   "underlinetext over 80 characters
   highlight OverLength cterm=underline
   "for highlighting columns over 80
@@ -218,12 +222,12 @@ function HighlightOver80()
 endfunction
 
 "trim all trailing white space
-function Trim()
+function! Trim()
 :%s/\s\+$//e
 endfunction
 
 "toggle relative/line numbers
-function ToggleNumbers()
+function! ToggleNumbers()
   if(&number == 0)
     set norelativenumber
     set number
