@@ -5,19 +5,19 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'benjifisher/matchit.zip'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kasldfh/verminal'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
 Plugin 'henrik/vim-indexed-search'
-
 Plugin 'pangloss/vim-javascript'
+
 call vundle#end()            " required
 "Run :PluginInstall to install plugins
 filetype plugin indent on    " required
@@ -210,7 +210,8 @@ set completeopt-=preview
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-let g:ctrlp_clear_cache_on_exit = 1
+"don't jump to file if it's already open ctrlp
+let g:ctrlp_switch_buffer='0'
 "end plugins configuration
 
 "***** functions***************
