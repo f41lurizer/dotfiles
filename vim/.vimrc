@@ -20,6 +20,7 @@ Plugin 'pangloss/vim-javascript'
 
 call vundle#end()            " required
 "Run :PluginInstall to install plugins
+packadd! matchit	" makes the % command work better
 filetype plugin indent on    " required
 "end vundle initialization
 
@@ -148,7 +149,7 @@ nnoremap <Leader>ot :edit ~/.tmux.conf<Enter>
 nnoremap <Leader>g :CtrlPBuffer<Enter>
 "nnoremap <Leader>g :b " enable if no ctrlp
 "delete a buffer
-nnoremap <Leader>d :bp\|bd#<Enter>
+nnoremap <Leader>d :bp\|bd!#<Enter>
 "switch to previous buffer
 nnoremap <Leader>i :b#<Enter>
 "tab commands
