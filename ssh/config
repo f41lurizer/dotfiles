@@ -1,18 +1,12 @@
-Host do
-  User f41lurizer
-  HostName 45.55.183.45
-
 Host cs3
   User jinde001
   HostName csdev03.d.umn.edu
-
 Host cs13
   User jinde001
   HostName csdev13.d.umn.edu
-
 Host ukko
   User jinde001
   HostName ukko.d.umn.edu
-Host stat
-  User f41lurizer
-  HostName 104.236.216.23
+Host deter
+  User jinde001
+  HostName users.isi.deterlab.net
