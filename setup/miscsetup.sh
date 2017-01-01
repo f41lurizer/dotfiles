@@ -6,6 +6,7 @@ sshpath="$cwd/../ssh/config"
 #tmux
 #install it first
 sudo apt-get install -y tmux ruby
+sudo apt-get install vlock # for terminal locking
 
 rm ~/.tmux.conf
 ln -s $cwd/../tmux/.tmux.conf ~/.tmux.conf
