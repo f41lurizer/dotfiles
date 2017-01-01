@@ -5,10 +5,10 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'FredKSchott/CoVim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -101,7 +101,7 @@ autocmd VimLeave * mksession! ~/.vim/prev
 nnoremap j gj
 nnoremap k gk
 "cmap f find
-cnoreabbrev f find
+"cnoreabbrev f find
 cnoreabbrev e find
 
 "better marks
@@ -242,4 +242,5 @@ endfunction
 
 "***** unused settings **************************
 "set cursorline     " shows line cursor is on by underlining it
+"autocmd BufEnter * setl formatoptions-=ro "automatic comment formatting
 "end unused settings
