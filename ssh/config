@@ -1,6 +1,14 @@
+Host *
+    AddressFamily inet
 Host cs3
   User jinde001
   HostName csdev03.d.umn.edu
+Host desk
+  User jinde001
+  HostName csgrad07.d.umn.edu
+Host cs16
+  User jinde001
+  HostName csdev16.d.umn.edu
 Host cs13
   User jinde001
   HostName csdev13.d.umn.edu
@@ -10,3 +18,6 @@ Host ukko
 Host deter
   User jinde001
   HostName users.isi.deterlab.net
+Host dev
+  User f41lurizer
+  HostName 198.199.96.12
