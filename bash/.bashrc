@@ -125,9 +125,9 @@ export PATH="~/.composer/vendor/bin:$PATH"
 #laravel aliases
 alias pat="php artisan tinker"
 alias pa="php artisan"
-alias hs="homestead ssh"
-alias hu="homestead up --provision"
-alias hh="homestead halt"
+alias hs="(cd ~/Homestead && vagrant ssh)"
+alias hu="(cd ~/Homestead && vagrant up)"
+alias hh="(cd ~/Homestead && vagrant halt)"
 
 #node aliases
 alias ns="npm start"
