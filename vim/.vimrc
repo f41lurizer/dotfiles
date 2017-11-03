@@ -65,7 +65,7 @@ autocmd FileType .blade.php set filetype=html.blade.phpl setl smartindent
 autocmd FileType jade setl cindent shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd FileType text setl tw=80
-autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
+"autocmd FileType c,cpp,h,java,sh,py,rb,make,jsp,vim call HighlightOver80()
 
 autocmd FileType jsp set filetype=html
 "end filetype specific stuff
@@ -102,7 +102,7 @@ nnoremap j gj
 nnoremap k gk
 "cmap f find
 "cnoreabbrev f find
-cnoreabbrev e find
+cnoreabbrev e edit
 
 "better marks
 nnoremap ' `
@@ -216,12 +216,12 @@ let g:ctrlp_switch_buffer='0'
 "end plugins configuration
 
 "***** functions***************
-function! HighlightOver80()
-  "underlinetext over 80 characters
-  highlight OverLength cterm=underline
-  "for highlighting columns over 80
-  match OverLength /\%>80v.\+/
-endfunction
+"function! HighlightOver80()
+"  "underlinetext over 80 characters
+"  highlight OverLength cterm=underline
+"  "for highlighting columns over 80
+"  match OverLength /\%>80v.\+/
+"endfunction
 
 "trim all trailing white space
 function! Trim()
@@ -230,11 +230,10 @@ endfunction
 
 "toggle relative/line numbers
 function! ToggleNumbers()
-  if(&number == 0)
+  if(&relativenumber == 1)
     set norelativenumber
     set number
   else
-    set nonumber
     set relativenumber
   endif
 endfunction
