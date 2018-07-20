@@ -25,10 +25,10 @@ filetype plugin indent on    " required
 "end vundle initialization
 
 "***** sensible defaults ********************
-set shiftwidth=4    " reindent operations indent 4 spaces
+"set shiftwidth=4    " reindent operations indent 4 spaces
 set tabstop=4       " visual spaces per tabs
 set softtabstop=4   " backspace over 4 spaces 
-set expandtab		" tabs to spaces
+"set expandtab		" tabs to spaces
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set title
@@ -38,9 +38,11 @@ syntax on          "syntax highlighting
 colorscheme default "use default color scheme
 set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
+set wildmode=longest,list " bash like tab completion
 "disable autocomment
 autocmd BufEnter * setl formatoptions-=ro
-set modeline
+"setting nomodeline, but I might actually want a modeline
+set nomodeline
 set ignorecase    "ignore case in search patterns
 set smartcase     "disables ignorecase if caps are in search pattern
 "end defaults
@@ -213,6 +215,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 "don't jump to file if it's already open ctrlp
 let g:ctrlp_switch_buffer='0'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 0
 "end plugins configuration
 
 "***** functions***************
