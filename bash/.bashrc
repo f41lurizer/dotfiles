@@ -177,7 +177,7 @@ alias prox="ssh -f -N -D 2000 "
 #no output spotify
 alias spotify="spotify &> /dev/null &"
 ##open file in gnome default handler
-alias o="gnome-open "
+alias o="xdg-open "
 #get background
 alias gbg="gsettings get org.gnome.desktop.background picture-uri"
 
