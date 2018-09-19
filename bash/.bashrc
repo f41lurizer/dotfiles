@@ -213,3 +213,17 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export NVM_DIR="/Users/maz.jindeel/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#Neovim - stolen from this reddit post https://www.reddit.com/r/neovim/comments/6npyjk/neovim_terminal_management_avoiding_nested_neovim/
+# v inside of a neovim terminal opens in that same neovim instance. Neovim without will open in new neovim
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+  #export VISUAL="nvr -cc tabedit --remote-wait +'set bufhidden=wipe'"
+  export VISUAL="nvr --remote"
+else
+  export VISUAL="nvim"
+fi
+
+alias v="$VISUAL"
+
+#Add local python files to path
+export PATH="$PATH:$HOME/.local/bin"

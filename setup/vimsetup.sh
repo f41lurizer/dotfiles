@@ -1,13 +1,23 @@
 #!/bin/bash
 cwd=$(pwd)
-vimPath="$cwd/../vim/.vim"
-vimrcPath="$cwd/../vim/.vimrc"
-#remove files if they already exist
-rm -rf ~/.vim ~/.vimrc
-ln -s $vimPath ~/.vim
-ln -s $vimrcPath ~/.vimrc
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall!
+
+#First, we install the neovim
+sudo apt install neovim python-neovim python3-neovim python3-pip
+#TODO: use virtualenvs for the python setups
+pip3 install neovim
+
+#https://github.com/neovim/neovim/wiki/Installing-Neovim
+#vimPath="$cwd/../vim/.vim"
+vimrcPath="$cwd/../vim/init.vim"
+##remove files if they already exist
+rm -rf ~/.config/nvim
+
+#Install plugin manager
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -s $vimrcPath ~/.config/nvim/init.vim
+nvim +PlugInstall +UpdateRemotePlugins +qall!
 #create directories for vim (undo, swap, prev)
-mkdir ~/.vim/undo
-mkdir ~/.vim/swap
+#mkdir ~/.vim/undo
+#mkdir ~/.vim/swap
