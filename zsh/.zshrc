@@ -68,6 +68,8 @@ plugins=(
 
 ZSH_THEME="spaceship"
 source $ZSH/oh-my-zsh.sh
+SPACESHIP_DIR_TRUNC=0
+SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_PROMPT_ORDER=(
 #  time          # Time stampts section
 #  user          # Username section
