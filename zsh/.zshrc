@@ -137,13 +137,7 @@ alias off="sudo poweroff -f"
 alias o="xdg-open "
 
 #tmux keybindings
-alias mux="tmuxinator"
-alias mx="mux gen"
-if [ -f ~/.bin/tmuxinator.bash ];
-then
-  source ~/.bin/tmuxinator.bash
-fi
-alias mx="sed -i \"s/root:.*/root: $@/g\" ~/.tmuxinator/gen.yml && mux gen"
+alias ta="tmux a"
 
 export TERM=xterm-256color
 

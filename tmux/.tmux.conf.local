@@ -320,3 +320,10 @@ set-option -g lock-command "vlock"
 #fun things
 #~' lets you enter index of window to navigate to (good for >9 windows)
 #~w gives you interactive list of windows  (good for >9 windows)
+new-session -s gen
+new-window
+new-window
+new-window
+new-window -d htop
+select-window -t 1 #and connect to the first window
+attach-session -t gen 

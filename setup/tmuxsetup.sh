@@ -12,4 +12,4 @@ ln -s $cwd/../tmux/.tmux.conf ~/.tmux.conf
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
-cp $cwd/../tmux/.tmux.conf.local .
+ln -s -f $cwd/../tmux/.tmux.conf.local
