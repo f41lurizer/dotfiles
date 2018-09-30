@@ -2,7 +2,7 @@
 cwd=$(pwd)
 
 #First, we install the neovim
-sudo apt install neovim python-neovim python3-neovim python3-pip
+sudo apt install curl neovim python-neovim python3-neovim python3-pip
 #TODO: use virtualenvs for the python setups
 pip3 install neovim
 
