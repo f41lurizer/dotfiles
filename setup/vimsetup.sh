@@ -8,6 +8,8 @@ pip3 install neovim
 
 #https://github.com/neovim/neovim/wiki/Installing-Neovim
 #vimPath="$cwd/../vim/.vim"
+#create config path
+mkdir -P $HOME/.config/nvim/autoload
 vimrcPath="$cwd/../vim/init.vim"
 ##remove files if they already exist
 rm -rf $HOME/.config/nvim
