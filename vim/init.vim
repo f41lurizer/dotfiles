@@ -4,19 +4,22 @@ call plug#begin()
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'srstevenson/vim-picker'
-
 	"Plugin Settings
 	"deoplete settings
 	let g:deoplete#enable_at_startup = 1
+	" Use pipenvs...kinda hardcoded but \o/
+	let g:python3_host_prog = '/home/maz/.local/share/virtualenvs/python3_venv-7uNbEjGO/bin/python'
+	let g:python_host_prog = '/home/maz/.local/share/virtualenvs/python2_venv-mo2A1mDa/bin/python'
+
 endif
 call plug#end()
 "end Plugins
 
 "***** Sensible defaults
-"set shiftwidth=4    " reindent operations indent 4 spaces
-"set expandtab		" tabs to spaces
+set shiftwidth=4    " reindent operations indent 4 spaces
+set noexpandtab		" tabs to spaces
 set tabstop=4       " visual spaces per tabs
-set softtabstop=4   " backspace over 4 spaces 
+"set softtabstop=4   " backspace over 4 spaces 
 set showmatch       " highlight matching [{()}]
 set number          " show line numbers
 set title

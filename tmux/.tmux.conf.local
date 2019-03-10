@@ -287,9 +287,9 @@ set -g status-keys vi
 set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
-# unbind C-b
+set -gu prefix2
+unbind C-a
+unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
 
@@ -297,9 +297,10 @@ set -g mode-keys vi
 #set -g status-position top
 
 #set prefix to ` instead of C-b
-unbind C-b
 set -g prefix `
 bind ` send-prefix
+unbind C-b
+unbind C-a
 
 #highlight windows with activity
 set -g monitor-activity on
@@ -317,6 +318,9 @@ bind x kill-session
 #bind l lock-server
 set-option -g lock-command "vlock"
 
+# Copy selection to clipboard
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
+
 #fun things
 #~' lets you enter index of window to navigate to (good for >9 windows)
 #~w gives you interactive list of windows  (good for >9 windows)
@@ -327,3 +331,4 @@ new-window
 new-window -d htop
 select-window -t 1 #and connect to the first window
 attach-session -t gen 
+

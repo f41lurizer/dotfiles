@@ -5,7 +5,7 @@ Host cs3
   HostName csdev03.d.umn.edu
 Host desk
   User jinde001
-  HostName csgrad07.d.umn.edu
+  HostName csgrad08.d.umn.edu
 Host cs16
   User jinde001
   HostName csdev16.d.umn.edu
@@ -15,9 +15,21 @@ Host cs13
 Host ukko
   User jinde001
   HostName ukko.d.umn.edu
+Host akka
+  User jinde001
+  HostName akka.d.umn.edu
 Host deter
   User jinde001
   HostName users.isi.deterlab.net
 Host dev
   User f41lurizer
   HostName 198.199.96.12
+Host janus
+	User jinde001
+	HostName janus.d.umn.edu
+Host basswood
+	User maz
+	HostName basswood.d.umn.edu
+Host ice
+    User tiredmaz
+    ProxyCommand ssh basswood -W %h:%p
