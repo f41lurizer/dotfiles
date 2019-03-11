@@ -12,4 +12,4 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 #install the .zshrc
 #remove files if they already exist
-ln -fs $zshrcPath
+ln -fs $zshrcPath ~/.zshrc

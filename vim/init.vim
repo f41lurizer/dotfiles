@@ -8,8 +8,9 @@ if has('nvim')
 	"deoplete settings
 	let g:deoplete#enable_at_startup = 1
 	" Use pipenvs...kinda hardcoded but \o/
-	let g:python3_host_prog = '/home/maz/.local/share/virtualenvs/python3_venv-7uNbEjGO/bin/python'
-	let g:python_host_prog = '/home/maz/.local/share/virtualenvs/python2_venv-mo2A1mDa/bin/python'
+	" To set up: create to virtualenvs somewhere for neovim python
+	let g:python3_host_prog = '/home/maz/.local/share/virtualenvs/vim_python3-iYtxeiRE/bin/python'
+	let g:python_host_prog = '/home/maz/.local/share/virtualenvs/vim_python2-UahbR5cZ/bin/python'
 
 endif
 call plug#end()
