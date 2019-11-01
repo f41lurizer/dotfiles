@@ -10,6 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
+#ZSH_THEME=random
+ZSH_THEME="kphoen"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -45,7 +47,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -78,7 +80,7 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
 #  host          # Hostname section
 #  TODO: I want to uncomment the git version, as soon as spaceship version 4.0.0 is released with async rendering I will uncomment. Right now it makes the prompt annoyingly slow
-#  git           # Git section (git_branch + git_status)
+# git           # Git section (git_branch + git_status)
 #  #hg            # Mercurial section (hg_branch  + hg_status)
 #  #package       # Package version
 #  #node          # Node.js section
@@ -120,23 +122,26 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 #
 
 #git 
-alias gpm="git push origin master"
-alias gpd="git push origin dev"
-alias gplm="git pull origin master"
-alias gpld="git pull origin dev"
+alias gp="git push"
 alias gcm="git commit -m "
-alias gc="git commit "
+alias gca"git commit --amend"
 alias gch="git checkout "
 alias gchb="git checkout -b "
 alias gs="git status"
 alias gd="git diff "
 alias ga="git add "
-alias gr="git rm "
+alias gl="git log --oneline"
+
+# node
+alias nrw="npm run watch"
+alias nrt="npm run test"
 
 #system aliases
 alias x="exit"
 alias off="sudo poweroff -f"
 alias o="xdg-open "
+
+alias gr="grep -riIn"
 
 #tmux keybindings
 alias ta="tmux a"
@@ -151,6 +156,27 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
 else
   export VISUAL="nvim"
 fi
+# C-x C-e to open current line in vim
 
 alias v="$VISUAL"
 export EDITOR="$VISUAL"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Sometimes we just want to blast away anything docker related
+docker-removecontainers() {
+    docker stop $(docker ps -aq)
+    docker rm $(docker ps -aq)
+}
+
+docker-armageddon() {
+    removecontainers
+    docker network prune -f
+    docker rmi -f $(docker images --filter dangling=true -qa)
+    docker volume rm $(docker volume ls --filter dangling=true -q)
+    docker rmi -f $(docker images -qa)
+}
+
+source ~/.zshrc.code42

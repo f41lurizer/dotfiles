@@ -328,7 +328,7 @@ new-session -s gen
 new-window
 new-window
 new-window
-new-window -d htop
+new-window
 select-window -t 1 #and connect to the first window
 attach-session -t gen 
 

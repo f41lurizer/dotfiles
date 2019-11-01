@@ -3,14 +3,17 @@
 call plug#begin()
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'leafgarland/typescript-vim'
+	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'srstevenson/vim-picker'
+	Plug 'stephpy/vim-yaml'
 	"Plugin Settings
 	"deoplete settings
 	let g:deoplete#enable_at_startup = 1
 	" Use pipenvs...kinda hardcoded but \o/
 	" To set up: create to virtualenvs somewhere for neovim python
-	let g:python3_host_prog = '/home/maz/.local/share/virtualenvs/vim_python3-iYtxeiRE/bin/python'
-	let g:python_host_prog = '/home/maz/.local/share/virtualenvs/vim_python2-UahbR5cZ/bin/python'
+	let g:python_host_prog = '/Users/maz.jindeel/.local/share/virtualenvs/vim_python2-shW40tNf/bin/python'
+	let g:python3_host_prog = '/Users/maz.jindeel/.local/share/virtualenvs/vim_python3-NLXctW7b/bin/python'
 
 endif
 call plug#end()
@@ -28,7 +31,9 @@ set titlestring=Vim
 set hidden          " hide modified buffers without saving
 set nohlsearch
 syntax on          "syntax highlighting
-colorscheme default "use default color scheme
+" For white background, 'morning' seems to be a better scheme
+"colorscheme morning
+"colorscheme default "use default color scheme
 set autoread  " auto reload file if edited
 set backspace=indent,eol,start       " allow backspacing over lines, start of inserts, indents (default on some systems)
 set wildmode=longest,list " bash like tab completion
@@ -45,6 +50,10 @@ au TermOpen * setlocal listchars= nonumber norelativenumber
 au TermOpen * startinsert
 au BufEnter,BufWinEnter,WinEnter term://* startinsert
 au BufLeave term://* stopinsert
+au FileType json setl sw=2 ts=2 sts=2 et
+au FileType javascript setl sw=2 ts=2 sts=2 et
+au FileType typescript setl sw=2 ts=2 sts=2 et
+au FileType typescript.tsx setl sw=2 ts=2 sts=2 et
 "end filetype specific defaults
 
 "***** Keybindings

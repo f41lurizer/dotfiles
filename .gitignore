@@ -3,3 +3,5 @@ undo
 swap
 bundle
 .netrwhist
+vim/vim_python2
+vim/vim_python3
