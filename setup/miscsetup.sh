@@ -7,7 +7,7 @@ sshpath="$cwd/../ssh/config"
 rm -rf ~/.config/gtk-3.0/gtk.css
 ln -s $gtkpath ~/.config/gtk-3.0/gtk.css
 #set up ssh config
-echo "This will overwrite the existing ssh info. Manually remove ~/.ssh to run"
-rm -rf ~/.ssh/config
-mkdir ~/.ssh
-ln -s $sshpath ~/.ssh/config
+# echo "This will overwrite the existing ssh info. Manually remove ~/.ssh to run"
+# rm -rf ~/.ssh/config
+# mkdir ~/.ssh
+# ln -s $sshpath ~/.ssh/config

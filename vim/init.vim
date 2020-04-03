@@ -7,13 +7,20 @@ if has('nvim')
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'srstevenson/vim-picker'
 	Plug 'stephpy/vim-yaml'
+	" This plugin folds are behaving really weird.
+	"Plug 'godlygeek/tabular' " Dependency for vim-markdown
+	"Plug 'plasticboy/vim-markdown'
 	"Plugin Settings
 	"deoplete settings
 	let g:deoplete#enable_at_startup = 1
 	" Use pipenvs...kinda hardcoded but \o/
 	" To set up: create to virtualenvs somewhere for neovim python
-	let g:python_host_prog = '/Users/maz.jindeel/.local/share/virtualenvs/vim_python2-shW40tNf/bin/python'
-	let g:python3_host_prog = '/Users/maz.jindeel/.local/share/virtualenvs/vim_python3-NLXctW7b/bin/python'
+	let g:python_host_prog = '/home/maz/.local/share/virtualenvs/vim_python2-UahbR5cZ/bin/python'
+	let g:python3_host_prog = '/home/maz/.local/share/virtualenvs/vim_python3-iYtxeiRE/bin/python'
+	" Maximum markdown folding level
+	let g:vim_markdown_folding_level = 6
+	"Disable aggressive indenting on vim-markdown plugin 
+	let g:vim_markdown_new_list_item_indent = 0
 
 endif
 call plug#end()

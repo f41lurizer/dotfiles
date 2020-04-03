@@ -3,7 +3,11 @@ cwd=$(pwd)
 vimrcPath="$cwd/../vim/init.vim"
 
 #First, we install the neovim
-sudo apt install -y curl neovim python-neovim python3-neovim python3-pip fzy
+# TODO: with ubuntu 20.04 there python-neovim seems to have been renamed to python-pynvim but I cannot find it?
+# https://launchpad.net/ubuntu/+source/python-neovim/+changelog 
+# but I can find python3-pynvim
+# sudo apt install -y curl neovim python-pynvim python3-pynvim python3-pip fzy
+sudo apt install -y curl neovim python3-pynvim python3-pip fzy
 
 pip3 install pipenv
 

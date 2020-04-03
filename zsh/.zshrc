@@ -179,4 +179,5 @@ docker-armageddon() {
     docker rmi -f $(docker images -qa)
 }
 
-source ~/.zshrc.code42
+
+source "/home/maz/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
