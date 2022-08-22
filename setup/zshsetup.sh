@@ -1,6 +1,6 @@
 #!/bin/bash
 #install zsh
-sudo apt install -y zsh fonts-powerline curl 
+#sudo apt install -y zsh fonts-powerline curl 
 cwd=$(pwd)
 zshrcPath="$cwd/../zsh/.zshrc"
 cd $HOME

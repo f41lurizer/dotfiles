@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -121,7 +122,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # For a full list of active aliases, run `alias`.
 #
 
-#git 
+# Auto-color diff
+# alias diff="diff --color=auto"
+
+#git
 alias gp="git push"
 alias gcm="git commit -m "
 alias gca"git commit --amend"
@@ -131,10 +135,13 @@ alias gs="git status"
 alias gd="git diff "
 alias ga="git add "
 alias gl="git log --oneline"
+alias gri="git rebase -i HEAD~"
+alias gca="git commit --amend"
 
 # node
 alias nrw="npm run watch"
 alias nrt="npm run test"
+alias nrb="npm run build"
 
 #system aliases
 alias x="exit"
@@ -142,6 +149,7 @@ alias off="sudo poweroff -f"
 alias o="xdg-open "
 
 alias gr="grep -riIn"
+alias gri="grep -riIn --exclude=\*test\* --exclude=\*node_modules\* --exclude=\*dist\* --exclude=\*build\*"
 
 #tmux keybindings
 alias ta="tmux a"
@@ -157,6 +165,7 @@ else
   export VISUAL="nvim"
 fi
 # C-x C-e to open current line in vim
+alias vim="nvim"
 
 alias v="$VISUAL"
 export EDITOR="$VISUAL"
@@ -165,18 +174,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Sometimes we just want to blast away anything docker related
-docker-removecontainers() {
-    docker stop $(docker ps -aq)
-    docker rm $(docker ps -aq)
-}
+# Avoid spammy node packages on install (looking at you core-js)
+export DISABLE_OPENCOLLECTIVE=true
+export ADBLOCK=true
 
-docker-armageddon() {
-    removecontainers
-    docker network prune -f
-    docker rmi -f $(docker images --filter dangling=true -qa)
-    docker volume rm $(docker volume ls --filter dangling=true -q)
-    docker rmi -f $(docker images -qa)
-}
+# Configure AWS cli to output to stdout
+export AWS_PAGER=""
+
+export DOCKER_BUILDKIT=1
+export BUILDKIT_PROGRESS=plain
 
 source ~/.zshrc.code42
